@@ -27,8 +27,8 @@ for (i = 0; i < n; i++)
 //impresion de cajas
 for(i=0; i<n; i++){
     printf(" Cage id is: %d \n", record[i].id);
-    printf(" Number is: %d \n", record[i].number);
-    printf(" Status is: \t%d\n\n",record[i].status);
+    printf(" Number is: \t%d \n", record[i].number);
+    printf(" Status is: \t\t%d\n\n",record[i].status);
     }
 //iteracion de sumas
 for (int k = 0; k < n; k++)
@@ -62,6 +62,9 @@ for (int k = 0; k < n; k++)
                 }
                 else if(record[i-1].status==0 && record[i+1].status!=0){
                     record[i].suma = record[i-1].number;
+                }
+                else{ //record[i-1].status!=0 && record[i+1].status!=0
+                    record[i].status = 2;
                 }
             }
             if(record[i].suma>=pivote && record[i].suma<=sumax){
