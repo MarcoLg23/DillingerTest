@@ -84,9 +84,11 @@ for (int k = 0; k < n; k++)
         }
     }
     sumax = pivote;
-
+    printf("\n----------------------------------------\n\t\t\t\t Maximo: %d\n Id maximo: %d\n----------------------------------------\n", sumax,idmax);
     //reacomodo de status
-    record[idmax].status = 1;
+    if(record[idmax].status == 0){
+        record[idmax].status = 1;
+    }
     if(idmax>=2){
         if(record[idmax-2].status==0){
             record[idmax-2].status = 1;
@@ -113,7 +115,6 @@ for (int k = 0; k < n; k++)
         printf(" Sum is: %d \n", record[i].suma);
         printf(" Status is: \t%d\n\n",record[i].status);
     }
-    printf(" Maximo: %d\n Id maximo: %d\n", sumax,idmax);
 }
 
 //Suma maxima de cajas seleccionadas
